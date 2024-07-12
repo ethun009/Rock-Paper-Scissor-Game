@@ -11,37 +11,38 @@
 
 <body>
 
+
   <div class="popup">
-  <h2>Instructions</h2>
-   <img src="https://i.postimg.cc/6QprvPqM/instructions.jpg" >
-   <button id="close" onclick="closePopup()">Let's play !!</button>
+    <h2>Instructions</h2>
+    <img src="/images/instructions.jpg">
+    <button id="close" onclick="closePopup()">Let's play !!</button>
   </div>
 
-  
   <header>
-    <h1><span class="rock">ROCK</span>    <span class="paper">PAPER</span>    <span class="scissor">SCISSOR</span></h1>
+    <h1><span class="rock">ROCK</span> <span class="paper">PAPER</span> <span class="scissor">SCISSOR</span></h1>
     <h3 class="game">GAME</h3>
     <H3><span class="e">MADE BY</span> <span class="name">ETHUN</span></H3>
-    <span><img class="insbtn" src="https://i.postimg.cc/P54bNHXL/insbtn.png" onclick="openPopup()"></span>
+    <span><img class="insbtn" src="/images/insbtn.png" onclick="openPopup()"></span>
+
   </header>
 
 
   <main>
     <div class="display">
       <div class="userDisplay">
-        <img class="userImg">
+        <img class="userImg" src="rock.png" id="img1">
         <h2>Your Choice</h2>
       </div>
       <div class="pcDisplay">
-        <img class="pcImg">
+        <img class="pcImg" src="rock.png" id="img2">
         <h2>Computer Choice</h2>
       </div>
     </div>
 
-  <div class="control">
-      <img src="https://i.postimg.cc/T1myFbkG/rock.png" alt="ROCK" class="rockBtn" onclick="rockBtn();">
-      <img src="https://i.postimg.cc/jjd72LjQ/paper.png" alt="PAPER" class="paperBtn" onclick="paperBtn();">
-      <img src="https://i.postimg.cc/SNFY8ZsK/scissor.png" alt="SCISSOR" class="scissorBtn" onclick="scissorBtn();">
+    <div class="control">
+      <img src="https://i.postimg.cc/GBG7r1Rk/rock.png" alt="ROCK" class="rockBtn" onclick="rockBtn();">
+      <img src="https://i.postimg.cc/NGrwxHt8/paper.png" alt="PAPER" class="paperBtn" onclick="paperBtn();">
+      <img src="https://i.postimg.cc/8JbZJBjc/scissor.png" alt="SCISSOR" class="scissorBtn" onclick="scissorBtn();">
     </div>
 
     <div class="displayResult"></div>
@@ -76,10 +77,11 @@
       </div>
 
       <div class="social">
-        <h2>Social Platform<div class="underline"><span></span></div></h2>
-        <h5><i class="fa-brands fa-facebook"></i><a href="https://www.facebook.com/ethun009/" target="_blank" >Facebook</a></h5>
-        <h5><i class="fa-brands fa-youtube"></i><a href="https://www.youtube.com/@ethun009/videos" target="_blank">Youtube</a></h5>
-        <h5><i class="fa-brands fa-tiktok"></i><a href="https://www.tiktok.com/@ethun009" target="_blank">Tiktok</a></h5>
+        <h2>Social Platform<div class="underline"><span></span></div>
+        </h2>
+        <h5><i class="fa-brands fa-facebook"></i><a href="">Facebook</a></h5>
+        <h5><i class="fa-brands fa-youtube"></i><a href="">Youtube</a></h5>
+        <h5><i class="fa-brands fa-tiktok"></i><a href="">Tiktok</a></h5>
       </div>
     </div>
     <br>
@@ -90,16 +92,16 @@
 
   <script src="https://kit.fontawesome.com/e4445e1bd6.js" crossorigin="anonymous"></script>
   <script src="script.js"></script>
-    <script>
+  <script>
     let popup = document.querySelector('.popup');
-    function closePopup () {
-     popup.classList.add("popup-close")
+    function closePopup() {
+      popup.classList.add("popup-close")
     }
 
-    function openPopup () {
+    function openPopup() {
       popup.classList.remove("popup-close")
     }
   </script>
-
 </body>
+
 </html>
