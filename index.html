@@ -10,10 +10,19 @@
 </head>
 
 <body>
+
+  <div class="popup">
+  <h2>Instructions</h2>
+   <img src="/images/instructions.jpg" >
+   <button id="close" onclick="closePopup()">Let's play !!</button>
+  </div>
+
+  
   <header>
     <h1><span class="rock">ROCK</span>    <span class="paper">PAPER</span>    <span class="scissor">SCISSOR</span></h1>
     <h3 class="game">GAME</h3>
     <H3><span class="e">MADE BY</span> <span class="name">ETHUN</span></H3>
+    <span><img class="insbtn" src="/images/insbtn.png" onclick="openPopup()"></span>
   </header>
 
 
@@ -81,6 +90,16 @@
 
   <script src="https://kit.fontawesome.com/e4445e1bd6.js" crossorigin="anonymous"></script>
   <script src="script.js"></script>
+    <script>
+    let popup = document.querySelector('.popup');
+    function closePopup () {
+     popup.classList.add("popup-close")
+    }
+
+    function openPopup () {
+      popup.classList.remove("popup-close")
+    }
+  </script>
 
 </body>
 </html>
