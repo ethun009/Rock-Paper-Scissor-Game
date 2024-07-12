@@ -1,45 +1,68 @@
 function generateComputerChoice() {
-  //This will generate random number between 0 and 3
   let randomNumber = Math.random() * 3;
+
   if (randomNumber > 0 && randomNumber <= 1) {
-    pcImg.src ="https://i.postimg.cc/63F2McfY/pcrock.jpg";
+    pcImg.src = "rock.png";
     return "Rock";
   } else if (randomNumber > 1 && randomNumber <= 2) {
-    pcImg.src ="https://i.postimg.cc/g0S6ZmX9/pcpaper.jpg";
+    pcImg.src = "paper.png";
     return "Paper";
   } else {
-    pcImg.src ="https://i.postimg.cc/4xXK2mpk/pcscissor.png";
+    pcImg.src = "scissors.png";
     return "Scissor";
   }
 }
 
+function startAnimation() {
+  userImg.src = "rock.png";
+  pcImg.src = "rock.png";
+  document.getElementById("img1").style.animation =
+    "shakeLeft 1s 3 ease-in-out";
+  document.getElementById("img2").style.animation =
+    "shakeRight 1s 3 ease-in-out";
+}
+
+function resetAnimation() {
+  document.getElementById("img1").style.animation = "";
+  document.getElementById("img2").style.animation = "";
+}
 
 function paperBtn() {
-  computerChoice = generateComputerChoice();
-         resultMsg = getResult('Paper', computerChoice);
-        showResult('Paper', computerChoice, resultMsg);
-        userImg.src= "https://i.postimg.cc/ZK8BLrBx/user-Paper.jpg";
+  startAnimation();
+
+  setTimeout(() => {
+    computerChoice = generateComputerChoice();
+    resultMsg = getResult("Paper", computerChoice);
+    showResult("Paper", computerChoice, resultMsg);
+    userImg.src = "paper.png";
+    resetAnimation();
+  }, 3000);
 }
 
-function rockBtn ()
-{
-  let computerChoice = generateComputerChoice();
-  let resultMsg = getResult('Rock', computerChoice);
-  showResult('Rock', computerChoice, resultMsg);
-  userImg.src= "https://i.postimg.cc/Pf88CGdc/rock.jpg";
-
+function rockBtn() {
+  startAnimation();
+  setTimeout(() => {
+    let computerChoice = generateComputerChoice();
+    let resultMsg = getResult("Rock", computerChoice);
+    showResult("Rock", computerChoice, resultMsg);
+    userImg.src = "rock.png";
+    resetAnimation();
+  }, 3000);
 }
 
-function scissorBtn () {
-  computerChoice = generateComputerChoice();
-        resultMsg = getResult('Scissor', computerChoice);
-        showResult('Scissor', computerChoice, resultMsg);
-        userImg.src= "https://i.postimg.cc/qvQNP4Gt/userscissor.png"
+function scissorBtn() {
+  startAnimation();
+
+  setTimeout(() => {
+    computerChoice = generateComputerChoice();
+    resultMsg = getResult("Scissor", computerChoice);
+    showResult("Scissor", computerChoice, resultMsg);
+    userImg.src = "scissors.png";
+    resetAnimation();
+  }, 3000);
 }
 
-
-
-let scoreStr = localStorage.getItem('score')
+let scoreStr = localStorage.getItem("score");
 let score = JSON.parse(scoreStr) || {
   win: 0,
   lost: 0,
@@ -84,8 +107,10 @@ function getResult(userMove, computerMove) {
 }
 
 function showResult(userMove, computerMove, result) {
-  localStorage.setItem('score' , JSON.stringify(score))
-  document.querySelector(".displayResult").innerHTML = `You have chosen ${userMove}.    Computer choice is ${computerMove}. ${result}`;
+  localStorage.setItem("score", JSON.stringify(score));
+  document.querySelector(
+    ".displayResult"
+  ).innerHTML = `You have chosen ${userMove}.    Computer choice is ${computerMove}. ${result}`;
   changeResult();
 }
 
@@ -100,8 +125,8 @@ function clrDiv() {
   score.lost = 0;
   score.tie = 0;
   document.querySelector(".displayResult").innerHTML = "";
-  userImg.src = '' ;
-  pcImg.src = '' ;
+  userImg.src = "rock.png";
+  pcImg.src = "rock.png";
 }
 
 let userImg = document.querySelector(".userImg");
