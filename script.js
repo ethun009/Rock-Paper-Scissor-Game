@@ -76,7 +76,7 @@ function getResult(userMove, computerMove) {
       return "You won👑";
     } else if (computerMove === "Rock") {
       score.tie++;
-      return `Bad Luck . Its a tie.`;
+      return `Bad Luck . Its a tie.🤣`;
     } else if (computerMove === "Paper") {
       score.lost++;
       return "You Lose🐸";
@@ -84,7 +84,7 @@ function getResult(userMove, computerMove) {
   } else if (userMove === "Scissor") {
     if (computerMove === "Scissor") {
       score.tie++;
-      return `Bad Luck . Its a tie.`;
+      return `Bad Luck . Its a tie.😂`;
     } else if (computerMove === "Rock") {
       score.lost++;
       return "You Lose🐸";
@@ -101,7 +101,7 @@ function getResult(userMove, computerMove) {
       return "You won👑";
     } else if (computerMove === "Paper") {
       score.tie++;
-      return `Bad Luck . Its a tie.`;
+      return `Bad Luck . Its a tie.🤦‍♂️`;
     }
   }
 }
