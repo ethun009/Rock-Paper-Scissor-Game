@@ -2,13 +2,13 @@ function generateComputerChoice() {
   //This will generate random number between 0 and 3
   let randomNumber = Math.random() * 3;
   if (randomNumber > 0 && randomNumber <= 1) {
-    pcImg.src ="/images/pcrock.jpg";
+    pcImg.src ="https://github.com/ethun009/Rock-Paper-Scissor-Game/blob/main/images/pcrock.jpg";
     return "Rock";
   } else if (randomNumber > 1 && randomNumber <= 2) {
-    pcImg.src ="/images/pcpaper.jpg";
+    pcImg.src ="https://github.com/ethun009/Rock-Paper-Scissor-Game/blob/main/images/pcpaper.jpg";
     return "Paper";
   } else {
-    pcImg.src ="/images/pcscissor.png";
+    pcImg.src ="https://github.com/ethun009/Rock-Paper-Scissor-Game/blob/main/images/pcscissor.png";
     return "Scissor";
   }
 }
