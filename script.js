@@ -2,13 +2,13 @@ function generateComputerChoice() {
   //This will generate random number between 0 and 3
   let randomNumber = Math.random() * 3;
   if (randomNumber > 0 && randomNumber <= 1) {
-    pcImg.src ="https://github.com/ethun009/Rock-Paper-Scissor-Game/blob/main/images/pcrock.jpg";
+    pcImg.src ="https://i.postimg.cc/63F2McfY/pcrock.jpg";
     return "Rock";
   } else if (randomNumber > 1 && randomNumber <= 2) {
-    pcImg.src ="https://github.com/ethun009/Rock-Paper-Scissor-Game/blob/main/images/pcpaper.jpg";
+    pcImg.src ="https://i.postimg.cc/g0S6ZmX9/pcpaper.jpg";
     return "Paper";
   } else {
-    pcImg.src ="https://github.com/ethun009/Rock-Paper-Scissor-Game/blob/main/images/pcscissor.png";
+    pcImg.src ="https://i.postimg.cc/4xXK2mpk/pcscissor.png";
     return "Scissor";
   }
 }
@@ -18,7 +18,7 @@ function paperBtn() {
   computerChoice = generateComputerChoice();
          resultMsg = getResult('Paper', computerChoice);
         showResult('Paper', computerChoice, resultMsg);
-        userImg.src= "/images/userPaper.jpeg";
+        userImg.src= "https://i.postimg.cc/ZK8BLrBx/user-Paper.jpg";
 }
 
 function rockBtn ()
@@ -26,7 +26,7 @@ function rockBtn ()
   let computerChoice = generateComputerChoice();
   let resultMsg = getResult('Rock', computerChoice);
   showResult('Rock', computerChoice, resultMsg);
-  userImg.src= "/images/rock.jpg";
+  userImg.src= "https://i.postimg.cc/Pf88CGdc/rock.jpg";
 
 }
 
@@ -34,8 +34,9 @@ function scissorBtn () {
   computerChoice = generateComputerChoice();
         resultMsg = getResult('Scissor', computerChoice);
         showResult('Scissor', computerChoice, resultMsg);
-        userImg.src= "/images/userscissor.png"
+        userImg.src= "https://i.postimg.cc/qvQNP4Gt/userscissor.png"
 }
+
 
 
 let scoreStr = localStorage.getItem('score')
