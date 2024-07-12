@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
@@ -18,11 +18,12 @@ body {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50% ,-50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
   border-radius: 8px;
   text-align: center;
   color: #333;
-  transition: transform .7s , top .7s;
+  transition: transform 0.7s, top 0.7s;
+  z-index: 9;
 }
 
 .popup img {
@@ -46,11 +47,9 @@ body {
 }
 
 .popup-close {
-
   top: 0;
-  transform: translate(-50% ,-50%) scale(0.1);
+  transform: translate(-50%, -50%) scale(0.1);
   visibility: hidden;
-
 }
 
 .popup h2 {
@@ -59,7 +58,6 @@ body {
   font-weight: 800;
   margin-bottom: 10px;
 }
-
 
 .insbtn {
   height: 50px;
@@ -72,10 +70,9 @@ body {
 header {
   text-align: center;
   margin: 50px 0;
-  
 }
 
-header h1 { 
+header h1 {
   font-size: 40px;
   font-weight: 700;
   letter-spacing: 4px;
@@ -87,7 +84,7 @@ header h1 .rock {
 }
 
 header h1 .paper {
-  color: white ;
+  color: white;
   text-shadow: 0 0 10px white;
 }
 
@@ -96,26 +93,25 @@ header h1 .scissor {
   text-shadow: 0 0 10px greenyellow;
 }
 
-
-header h3 { 
+header h3 {
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 4px;
 }
 
- .game {
+.game {
   color: yellow;
   text-shadow: 0 0 10px greenyellow;
 }
 
 .e {
   color: #fff;
-  text-shadow: 0 0 10px white , 0 0 10px white;
+  text-shadow: 0 0 10px white, 0 0 10px white;
 }
 
 .name {
   color: red;
-  text-shadow: 0 0 10px red ,0 0 10px red;
+  text-shadow: 0 0 10px red, 0 0 10px red;
   font-size: 40px;
 }
 
@@ -125,20 +121,55 @@ main .display {
   display: flex;
 }
 
-main .userDisplay , .pcDisplay {
+main .userDisplay,
+.pcDisplay {
   height: 600px;
   width: 40%;
- margin: 0 auto;
-  
+  margin: 0 auto;
 }
 
-main .userDisplay .userImg ,main .pcDisplay .pcImg {
+#img1 {
+  padding-top: 20px;
+  transform: rotateY(180deg);
+}
+
+.startAnim {
+  animation: "shakeLeft 1s 3 ease-in-out";
+  animation: "shakeRight 1s 3 ease-in-out";
+}
+
+@keyframes shakeLeft {
+  0% {
+    transform: rotateY(180deg) translateY(0px);
+  }
+  50% {
+    transform: rotateY(180deg) translateY(-50px);
+  }
+  100% {
+    transform: rotateY(180deg) translateY(0px);
+  }
+}
+
+@keyframes shakeRight {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+main .userDisplay .userImg,
+main .pcDisplay .pcImg {
   height: 550px;
   width: 100%;
   border-radius: 100px;
-  
 }
-main .userDisplay h2 ,main .pcDisplay h2 {
+main .userDisplay h2,
+main .pcDisplay h2 {
   text-align: center;
   text-shadow: 0 0 10px white;
   color: white;
@@ -148,21 +179,22 @@ main .userDisplay h2 ,main .pcDisplay h2 {
   height: 200px;
   width: 100%;
   text-align: center;
-  margin:  100px 0;
+  margin: 100px 0;
   cursor: pointer;
   display: flex;
   justify-content: space-evenly;
 }
 
-.control .rockBtn , .paperBtn , .scissorBtn {
+.control .rockBtn,
+.paperBtn,
+.scissorBtn {
   height: 200px;
   width: 200px;
   border-radius: 50%;
   border: 2px solid black;
   object-fit: contain;
-  
-  background: linear-gradient(to right ,#1f1f21 ,#2d2c31);
- 
+
+  background: linear-gradient(to right, #1f1f21, #2d2c31);
 }
 .control .rockBtn {
   box-shadow: 10px 10px 10px rgb(255, 0, 200);
@@ -175,7 +207,6 @@ main .userDisplay h2 ,main .pcDisplay h2 {
 .control .scissorBtn {
   box-shadow: 10px 10px 10px rgb(242, 255, 0);
 }
-
 
 main .displayResult {
   display: flex;
@@ -197,7 +228,7 @@ main .displayResult {
   position: sticky;
   bottom: 10px;
   left: 95%;
-  right:100px;
+  right: 100px;
   height: 50px;
   width: 50px;
   color: rgb(248, 48, 8);
@@ -209,37 +240,38 @@ main .displayResult {
   font-weight: 600;
 }
 
-
 .scoreBoard {
   text-align: center;
   height: 300px;
   margin-top: 50px;
   color: #000;
-
 }
 
-.scoreBoard .win ,#win {
+.scoreBoard .win,
+#win {
   color: greenyellow;
-  text-shadow: 0 0 10px greenyellow ,  0 0 10px greenyellow;
+  text-shadow: 0 0 10px greenyellow, 0 0 10px greenyellow;
   margin: 0 10px;
 }
 
-.scoreBoard .lose ,#lose {
+.scoreBoard .lose,
+#lose {
   color: red;
-  text-shadow: 0 0 10px red ,  0 0 10px red;
+  text-shadow: 0 0 10px red, 0 0 10px red;
   margin: 0 10px;
 }
 
-.scoreBoard .tie ,#tie {
+.scoreBoard .tie,
+#tie {
   color: yellow;
-  text-shadow: 0 0 10px yellow ,  0 0 10px yellow;
+  text-shadow: 0 0 10px yellow, 0 0 10px yellow;
   margin: 0 10px;
 }
 .scoreBoard h1 {
   font-size: 45px;
   font-weight: 700;
   color: #fff;
-  text-shadow: 0 0 10px #fff ,  0 0 10px #fff;
+  text-shadow: 0 0 10px #fff, 0 0 10px #fff;
 }
 
 .count {
@@ -248,27 +280,25 @@ main .displayResult {
   font-size: 20px;
   font-weight: 400;
 }
- 
 
 footer {
   width: 100%;
- 
-  background: linear-gradient(to right , #00093c ,#2d0b00);
-  color:#fff;
+
+  background: linear-gradient(to right, #00093c, #2d0b00);
+  color: #fff;
   padding: 50px 0 0px;
   border-top-left-radius: 125px;
   font-size: 13px;
   line-height: 20px;
- 
 }
 
 .row {
- width: 85%;
- margin: auto;
- display: flex;
- flex-wrap: wrap;
- align-items: flex-start;
- justify-content: space-between;
+  width: 85%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 .personal-info {
@@ -278,22 +308,19 @@ footer {
 
 .personal-info h2 {
   margin-bottom: 40px;
- 
+
   width: fit-content;
-  
 }
 
 .personal-info h3 {
-
   margin-bottom: 15px;
 }
 .personal-info i {
   margin-right: 10px;
-  
 }
 
-.contact , .social {
-
+.contact,
+.social {
   flex-basis: 20%;
 }
 .contact h2 {
@@ -325,17 +352,15 @@ footer {
 }
 
 .social h5 .fa-brands {
-  
   height: 30px;
   width: 30px;
   border-radius: 50%;
   text-align: center;
   font-size: 20px;
   line-height: 30px;
- 
 }
 
-hr{
+hr {
   width: 90%;
   border: 0;
   border-bottom: 1px solid #ccc;
@@ -345,17 +370,16 @@ hr{
 .copyright {
   text-align: center;
   font-size: 10px;
-  
 }
 
 .underline {
-   width: 100%;
-   height: 5px ;
-   background: #767676;
-   border-radius: 3px;
-   position: relative ;
-   top: 5px;
-   left: 0;
+  width: 100%;
+  height: 5px;
+  background: #767676;
+  border-radius: 3px;
+  position: relative;
+  top: 5px;
+  left: 0;
 }
 
 .underline span {
@@ -368,7 +392,6 @@ hr{
   left: 10px;
   animation: moving 5s linear infinite;
   overflow: hidden;
-
 }
 
 @keyframes moving {
@@ -376,21 +399,17 @@ hr{
     left: -10px;
   }
 
-  100%{
+  100% {
     left: 100%;
   }
 }
 
-
 @media (max-width: 1100px) {
-
   .popup {
     width: 80%;
     padding: 30px 40px;
-
   }
-  
-  
+
   .insbtn {
     height: 70px;
     width: 70px;
@@ -398,137 +417,134 @@ hr{
     top: 10px;
     right: 10px;
   }
-  
-header h1 { 
-  font-size: 60px;
-  font-weight: 700;
-  letter-spacing: 4px;
-}
 
+  header h1 {
+    font-size: 60px;
+    font-weight: 700;
+    letter-spacing: 4px;
+  }
 
-header h3 { 
-  font-size: 30px;
-  font-weight: 700;
-  letter-spacing: 4px;
-}
+  header h3 {
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 4px;
+  }
 
-
-.name {
-  color: red;
-  text-shadow: 0 0 10px red ,0 0 10px red;
-  font-size: 50px;
-}
+  .name {
+    color: red;
+    text-shadow: 0 0 10px red, 0 0 10px red;
+    font-size: 50px;
+  }
 
   main .display {
     height: 500px;
     width: 100%;
     display: flex;
   }
-  
-  main .userDisplay , .pcDisplay {
+
+  main .userDisplay,
+  .pcDisplay {
     height: 500px;
     width: 45%;
-   margin: 0 auto;
-    
+    margin: 0 auto;
   }
-  
-  main .userDisplay .userImg ,main .pcDisplay .pcImg {
+
+  main .userDisplay .userImg,
+  main .pcDisplay .pcImg {
     height: 465px;
     width: 100%;
     border-radius: 100px;
-    
   }
 
-  .control .rockBtn , .paperBtn , .scissorBtn {
+  .control .rockBtn,
+  .paperBtn,
+  .scissorBtn {
     height: 150px;
     width: 150px;
-    border-radius: 50%;  
+    border-radius: 50%;
   }
 
-  
-main .displayResult {
-  display: flex;
-  height: 7em;
-  width: 60%;
-  text-align: center;
-  border: 2px solid rgb(255, 0, 0);
-  margin-left: 20%;
-  font-size: 30px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50px;
-  box-shadow: 10px 10px 10px red;
-  color: #fff;
-  padding: 10px;
-}
+  main .displayResult {
+    display: flex;
+    height: 7em;
+    width: 60%;
+    text-align: center;
+    border: 2px solid rgb(255, 0, 0);
+    margin-left: 20%;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    box-shadow: 10px 10px 10px red;
+    color: #fff;
+    padding: 10px;
+  }
 
-.reset {
-  position: sticky;
-  bottom: 10px;
-  left: 90%;
-  
-  height: 75px;
-  width: 75px;
-  color: rgb(248, 48, 8);
-  background-color: transparent;
-  background-image: url("https://i.postimg.cc/Kz137wB1/reset.png");
-  background-size: contain;
-  border-radius: 50%;
-  font-size: 15px;
-  font-weight: 600;
-}
+  .reset {
+    position: sticky;
+    bottom: 10px;
+    left: 90%;
 
+    height: 75px;
+    width: 75px;
+    color: rgb(248, 48, 8);
+    background-color: transparent;
+    background-image: url("https://i.postimg.cc/Kz137wB1/reset.png");
+    background-size: contain;
+    border-radius: 50%;
+    font-size: 15px;
+    font-weight: 600;
+  }
 
-.scoreBoard {
-  text-align: center;
-  height: 300px;
-  margin-top: 50px;
-  color: #000;
+  .scoreBoard {
+    text-align: center;
+    height: 300px;
+    margin-top: 50px;
+    color: #000;
+  }
 
-}
+  .scoreBoard .win,
+  #win {
+    color: greenyellow;
+    text-shadow: 0 0 10px greenyellow, 0 0 10px greenyellow;
+    margin: 0 10px;
+  }
 
-.scoreBoard .win ,#win {
-  color: greenyellow;
-  text-shadow: 0 0 10px greenyellow ,  0 0 10px greenyellow;
-  margin: 0 10px;
-}
+  .scoreBoard .lose,
+  #lose {
+    color: red;
+    text-shadow: 0 0 10px red, 0 0 10px red;
+    margin: 0 10px;
+  }
 
-.scoreBoard .lose ,#lose {
-  color: red;
-  text-shadow: 0 0 10px red ,  0 0 10px red;
-  margin: 0 10px;
-}
+  .scoreBoard .tie,
+  #tie {
+    color: yellow;
+    text-shadow: 0 0 10px yellow, 0 0 10px yellow;
+    margin: 0 10px;
+  }
+  .scoreBoard h1 {
+    font-size: 60px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 0 10px #fff, 0 0 10px #fff;
+    margin-bottom: 30px;
+  }
 
-.scoreBoard .tie ,#tie {
-  color: yellow;
-  text-shadow: 0 0 10px yellow ,  0 0 10px yellow;
-  margin: 0 10px;
-}
-.scoreBoard h1 {
-  font-size: 60px;
-  font-weight: 700;
-  color: #fff;
-  text-shadow: 0 0 10px #fff ,  0 0 10px #fff;
-  margin-bottom: 30px;
-}
-
-.count {
-  position: absolute;
-  left: 20%;
-  font-size: 20px;
-  font-weight: 400;
-}
- 
-
+  .count {
+    position: absolute;
+    left: 20%;
+    font-size: 20px;
+    font-weight: 400;
+  }
 
   footer {
     padding-top: 100px;
- 
   }
   .personal-info {
     flex-basis: 100%;
     padding: 0;
-   margin-bottom: 20px;
+    margin-bottom: 20px;
   }
   .contact {
     flex-basis: 100%;
@@ -536,20 +552,14 @@ main .displayResult {
   }
   .social {
     flex-basis: 100%;
-   
   }
 
   .social h5 .fa-brands {
-  
     height: 40px;
     width: 40px;
     border-radius: none;
     text-align: center;
     font-size: 15px;
     line-height: 25px;
-    
   }
-  
-
-  
 }
