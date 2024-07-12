@@ -11,6 +11,64 @@ body {
   background: #0e3742;
 }
 
+.popup {
+  background-color: #fff;
+  width: 40%;
+  padding: 30px 40px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50% ,-50%) scale(1);
+  border-radius: 8px;
+  text-align: center;
+  color: #333;
+  transition: transform .7s , top .7s;
+}
+
+.popup img {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 90%;
+}
+
+.popup button {
+  display: block;
+  width: 100%;
+  font-size: 30px;
+  margin-top: 30px;
+  padding: 10px 0;
+  background: #6fd649;
+  color: #fff;
+  border: 0;
+  border-radius: 7px;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.popup-close {
+
+  top: 0;
+  transform: translate(-50% ,-50%) scale(0.1);
+  visibility: hidden;
+
+}
+
+.popup h2 {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+
+.insbtn {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
 header {
   text-align: center;
   margin: 50px 0;
@@ -326,7 +384,20 @@ hr{
 
 @media (max-width: 1100px) {
 
+  .popup {
+    width: 80%;
+    padding: 30px 40px;
 
+  }
+  
+  
+  .insbtn {
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
   
 header h1 { 
   font-size: 60px;
@@ -478,5 +549,7 @@ main .displayResult {
     line-height: 25px;
     
   }
+  
+
   
 }
